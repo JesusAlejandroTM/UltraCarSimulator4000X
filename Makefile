@@ -1,22 +1,26 @@
 CC = gcc
+NAME = UltraCarSimulator4000X
+SRC_FILES = $(wildcard src/*.c)
+BINARY_PATH = ./bin/$(NAME)
+
 CFLAGS = -Wall -Wextra
 INCLUDE_FLAG = -Iinclude
-NAME = UltraCarSimulator4000X
-EXECUTABLE = -o $(NAME)
-SRC_FILES = $(wildcard src/*.c)
+BINARY_PATH_FLAG = -o $(BINARY_PATH)
 
 .DEFAULT_GOAL := dev_run
 
 run:
-	$(CC) $(CFLAGS) $(INCLUDE_FLAG) $(EXECUTABLE) $(SRC_FILES)
-	./$(NAME)
-	rm $(NAME)
+	$(CC) $(CFLAGS) $(INCLUDE_FLAG) $(BINARY_PATH_FLAG) $(SRC_FILES)
+	$(BINARY_PATH)
+	rm $(BINARY_PATH)
+	clear
 
 dev_run:
-	$(CC) $(INCLUDE_FLAG) $(EXECUTABLE) $(SRC_FILES)
-	./$(NAME)
-	rm $(NAME)
+	$(CC) $(INCLUDE_FLAG) $(BINARY_PATH_FLAG) $(SRC_FILES)
+	$(BINARY_PATH)
+	rm $(BINARY_PATH)
+	clear
 
 debug:
-	$(CC) $(INCLUDE_FLAG) $(EXECUTABLE) $(SRC_FILES) -g
-	gdb ./$(NAME)
+	$(CC) $(INCLUDE_FLAG) $(BINARY_PATH_FLAG) $(SRC_FILES) -g
+	gdb ./$(BINARY_PATH)
