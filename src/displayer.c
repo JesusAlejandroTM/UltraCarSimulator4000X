@@ -17,10 +17,11 @@ void print_object(const char *path)
     FILE *file = fopen(path, "r");
 
     // Print the file
-    if (file) {
-        char c;
+    int c;
+    if (file) 
+    {
         while ((c = getc(file)) != EOF)
-            printf("%c\n", c);
+            putchar(c);
         fclose(file);
     }
 }
