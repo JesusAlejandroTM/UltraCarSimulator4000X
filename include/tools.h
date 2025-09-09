@@ -4,11 +4,16 @@
 #ifndef TOOLS_H
 #define TOOLS_H
 
-typedef struct Point Point;
+typedef struct {
+    int x;
+    int y;
+} Point;
 
-void set_location(Point *point, int x, int y);
-void print_location(Point *point);
-Point* create_point(int x, int y);
+Point*  point_create(int x, int y);
+void    point_set_location(Point *point, int x, int y);
+void    point_move_by(Point *point, int dx, int dy);
+void    point_print_location(Point *point);
+
 int add(int a, int b);
 
 #endif

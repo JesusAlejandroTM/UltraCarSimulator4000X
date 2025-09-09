@@ -3,32 +3,27 @@
 #include "tools.h"
 
 
-struct Point {
-    int x;
-    int y;
-};
-
-Point* create_point(int x, int y)
+Point* point_create(int x, int y)
 {
     Point *point = malloc(sizeof(Point));
     if (point == NULL) return NULL;
-    set_location(point, x, y);
+    point_set_location(point, x, y);
     return point;
 }
 
-void set_location(Point *point, int x, int y)
+void point_set_location(Point *point, int x, int y)
 {
     point->x = x;
     point->y = y;
 }
 
-void print_location(Point *point)
+void point_move_by(Point *point, int dx, int dy)
 {
-    printf("X: %d, Y: %d", point->x, point->y);
+    point->x = point->x + dx;
+    point->y = point->y + dy;
 }
 
-
-int add(int a, int b)
+void point_print_location(Point *point)
 {
-    return a + b;
+    printf("X: %d, Y: %d", point->x, point->y);
 }

@@ -10,6 +10,7 @@
 
 int main(void)
 {
+    clear_screen();
     char small_parking[] = "maps/small_parking";
     char car[] = "vehicles/small_red_car";
 

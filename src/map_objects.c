@@ -2,18 +2,11 @@
 
 typedef struct {
     char *name;
-    int x;
-    int y;
+    Point *position;
 } MapObject;
 
 typedef struct {
-    char *name;
-    int x;
-    int y;
+    MapObject object;
     Point *drawingPoint;
 } ParkingSpot;
 
-typedef struct {
-    MapObject object;
-    char *color;
-} Vehicle;

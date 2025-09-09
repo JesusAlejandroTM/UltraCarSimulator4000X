@@ -11,6 +11,13 @@ void gotoxy(int x,int y)
     printf("%c[%d;%df",0x1B,y,x);
 }
 
+// Clear the screen and move the cursor to the top-left
+void clear_screen()
+{
+    printf("\033[2J\033[H");
+    fflush(stdout);
+}
+
 void print_object(const char *path)
 {
     // Open the file
