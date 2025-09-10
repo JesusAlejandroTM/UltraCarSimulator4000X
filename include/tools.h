@@ -1,6 +1,3 @@
-// Just un example de .h
-// pour importer une fonction
-
 #ifndef TOOLS_H
 #define TOOLS_H
 
@@ -13,7 +10,5 @@ Point*  point_create(int x, int y);
 void    point_set_location(Point *point, int x, int y);
 void    point_move_by(Point *point, int dx, int dy);
 void    point_print_location(Point *point);
-
-int add(int a, int b);
 
 #endif
