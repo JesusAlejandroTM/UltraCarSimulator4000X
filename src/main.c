@@ -10,11 +10,7 @@
 
 int main(void)
 {
-    ParkingSpot spot = object_build("SMALL_PARKING", 10, 10);
-
-    object_print_location(spot);
-
-    getchar();
+    ParkingSpot spot = object_build("SMALL_PARKING", 30, 4);
 
     clear_screen();
     char small_parking[] = "maps/small_parking";
@@ -35,7 +31,7 @@ int main(void)
         }
         if (key == 'c' | key == 'C')
         {
-            print_object(car, 30, 4);
+            print_object(spot);
         }
     }
 

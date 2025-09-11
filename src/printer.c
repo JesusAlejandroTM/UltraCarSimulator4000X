@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include "assets_manager.h"
-#include "map_objects.h"
 #include "printer.h"
 
 // Raw function to move cursor
@@ -53,8 +52,9 @@ void print_map(const char *asset_file_path)
 
 void print_object(ParkingSpot spot)
 {
+    char asset_file_path[] = "vehicles/small_red_car";
     char *path = format_file_path(asset_file_path);
-    move_cursor(posX, posY);
+    move_cursor(spot.position.x, spot.position.y);
 
     // Open the file
     FILE *file = fopen(path, "r");
@@ -67,7 +67,7 @@ void print_object(ParkingSpot spot)
         {
             // If we find a line break, we move the cursor down 
             if (c == '\n') {
-                move_cursor(posX, ++posY);
+                move_cursor(spot.drawing_position.x, ++spot.position.y);
             } else {
                 putchar(c);
             }

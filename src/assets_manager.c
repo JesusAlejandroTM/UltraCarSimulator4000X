@@ -40,11 +40,11 @@ char *format_map_objects_file_path(const char *asset_file_path)
     return path;
 }
 
-char *get_object_asset_name(ParkingSpot spot)
+void *get_object_asset_name(ParkingSpot spot)
 {
     // This function needs to find the asset file path of the
     // object based on it's name
     // we have to implement a dictionary that lists 
     // object names with asset file paths
-    return spot.name;
+    return 0;
 }
