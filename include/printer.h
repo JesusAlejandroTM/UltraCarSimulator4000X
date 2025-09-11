@@ -5,6 +5,7 @@
 #define LEFT_ANCHOR_POSITION 0
 
 #include "map_objects.h"
+#include "assets_manager.h"
 
 void clear_screen();
 void move_cursor(int x, int y);

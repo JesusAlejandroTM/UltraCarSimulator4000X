@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "assets_manager.h"
-#include "map_objects.h"
 
 #define FILE_PATH_PREFIX "assets/"
 #define FILE_EXTENSION ".txt"
@@ -40,11 +40,19 @@ char *format_map_objects_file_path(const char *asset_file_path)
     return path;
 }
 
-void *get_object_asset_name(ParkingSpot spot)
+char* get_object_asset_name(ParkingSpot spot)
 {
-    // This function needs to find the asset file path of the
-    // object based on it's name
-    // we have to implement a dictionary that lists 
-    // object names with asset file paths
+    // HARDCODED FOR NOW
+
+    // This function needs to find the asset file path of the object based on it's name
+    // we have to implement a mapp that lists object names with asset file paths
+    if (strcmp(spot.name, "CAR_PARKING_SPOT") == 0)
+    {
+        return "objects/parkings/car_parking_spot/car_parking_spot-left";
+    }
+    if (strcmp(spot.name, "CAR") == 0)
+    {
+        return "objects/vehicles/car/car-right";
+    }
     return 0;
 }

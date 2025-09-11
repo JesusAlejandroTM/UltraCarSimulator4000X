@@ -10,12 +10,11 @@
 
 int main(void)
 {
-    ParkingSpot spot = object_build("SMALL_PARKING", 30, 4);
-
     clear_screen();
+
+    ParkingSpot spot = object_build("CAR_PARKING_SPOT", 30, 4);
+
     char small_parking[] = "maps/small_parking";
-    char car[] = "vehicles/small_red_car";
-    char test[] = "vehicles/test";
 
     // Ideally we have to display a menu here first
     // where the User can select a mode

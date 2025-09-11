@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "assets_manager.h"
 #include "printer.h"
 
 // Raw function to move cursor
@@ -52,7 +51,7 @@ void print_map(const char *asset_file_path)
 
 void print_object(ParkingSpot spot)
 {
-    char asset_file_path[] = "vehicles/small_red_car";
+    char *asset_file_path = get_object_asset_name(spot);
     char *path = format_file_path(asset_file_path);
     move_cursor(spot.position.x, spot.position.y);
 
