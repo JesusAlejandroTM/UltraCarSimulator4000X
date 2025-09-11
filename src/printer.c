@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "map_controller.h"
+#include "assets_manager.h"
+#include "map_objects.h"
 #include "printer.h"
 
 // Raw function to move cursor
@@ -50,7 +51,7 @@ void print_map(const char *asset_file_path)
     free(path);
 }
 
-void print_object(const char *asset_file_path, int posX, int posY)
+void print_object(ParkingSpot spot)
 {
     char *path = format_file_path(asset_file_path);
     move_cursor(posX, posY);
@@ -77,6 +78,7 @@ void print_object(const char *asset_file_path, int posX, int posY)
 
     free(path);
 }
+
 
 
 
