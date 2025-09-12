@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "printer.h"
 #include "user_controller.h"

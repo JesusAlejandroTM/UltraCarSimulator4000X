@@ -11,8 +11,6 @@ void    point_set_location(Point *point, int x, int y);
 void    point_move_by(Point *point, int dx, int dy);
 void    point_print_location(Point *point);
 
-#endif
-
 typedef struct car VEHICLE;             //Définition de la structure des voitures
 struct car
 {
@@ -57,3 +55,5 @@ VEHICLE *adress_at_index(const int index, VEHICLE *head);
 void delete_vehicle(VEHICLE *head, const int index_to_delete);
 
 VEHICLE *push_element(VEHICLE *head);
+
+#endif
