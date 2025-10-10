@@ -1,3 +1,5 @@
+// map_objects_interpreter.c
+
 // Interpretate the [map]_objects.txt file to build
 // an array of ObjectAssets which will be printed.
 

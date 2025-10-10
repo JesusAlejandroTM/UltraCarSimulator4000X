@@ -1,3 +1,5 @@
+// asset_manager.c
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -40,7 +42,7 @@ char *format_map_objects_file_path(const char *asset_file_path)
     return path;
 }
 
-char* get_object_asset_name(ParkingSpot spot)
+char* get_object_asset_name(MapObject spot)
 {
     // HARDCODED FOR NOW
 
