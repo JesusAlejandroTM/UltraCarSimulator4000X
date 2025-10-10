@@ -40,8 +40,17 @@ int main(void)
         }
     }
 
+    int start = 0;
     init_introduction();
-    while (1) {}
+    while (!start) {
+        char key = getch();
+        // Quit the program
+        if (key == 'P' || key == 'p') {
+            start = 1;
+        }
+    }
+
+    clear();
     
     init_simulator_gui();
     print_map(mid_sim_w, small_parking);
@@ -50,11 +59,38 @@ int main(void)
     {
         char key = getch();
         // Quit the program
-        if (key == 'q' || key == 'Q') {
+        if (key == 'x' || key == 'X') {
             endwin();
             return 0;
         }
         if (key == 'c' || key == 'C') {
+            print_map_object(mid_sim_w, &spot.base);
+        }
+        if (key == 'x' || key == 'X') {
+            delete_map_object(mid_sim_w, &spot.base);
+        }
+        if (key == 'z' || key == 'Z')
+        {
+            delete_map_object(mid_sim_w, &spot.base);
+            spot.base.position.y += 1;
+            print_map_object(mid_sim_w, &spot.base);
+        }
+        if (key == 'd' || key == 'D')
+        {
+            delete_map_object(mid_sim_w, &spot.base);
+            spot.base.position.x += 1;
+            print_map_object(mid_sim_w, &spot.base);
+        }
+        if (key == 'q' || key == 'Q')
+        {
+            delete_map_object(mid_sim_w, &spot.base);
+            spot.base.position.x -= 1;
+            print_map_object(mid_sim_w, &spot.base);
+        }
+        if (key == 's' || key == 'S')
+        {
+            delete_map_object(mid_sim_w, &spot.base);
+            spot.base.position.y -= 1;
             print_map_object(mid_sim_w, &spot.base);
         }
     }

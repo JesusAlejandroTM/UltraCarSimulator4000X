@@ -15,5 +15,6 @@
 void print_gui_element(const char *asset_file_path, int x, int y);
 void print_map(WINDOW* win, const char *asset_file_path);
 void print_map_object(WINDOW* win, const MapObject* spot);
+void delete_map_object(WINDOW* win, const MapObject* spot);
 
 #endif //PRINTER_H
