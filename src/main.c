@@ -22,6 +22,7 @@ int main(void)
     curs_set(0);
     clear();
 
+    
 
     ParkingSpot spot = map_object_build("CAR_PARKING_SPOT", 30, 4);
         
@@ -58,7 +59,7 @@ int main(void)
     while (1)
     {
         char key = getch();
-        // Quit the program
+        // Quitter le programme
         if (key == 'x' || key == 'X') {
             endwin();
             return 0;
@@ -69,7 +70,7 @@ int main(void)
         if (key == 'x' || key == 'X') {
             delete_map_object(mid_sim_w, &spot.base);
         }
-        if (key == 'z' || key == 'Z')
+        if (key == 's' || key == 'S')
         {
             delete_map_object(mid_sim_w, &spot.base);
             spot.base.position.y += 1;
@@ -87,7 +88,7 @@ int main(void)
             spot.base.position.x -= 1;
             print_map_object(mid_sim_w, &spot.base);
         }
-        if (key == 's' || key == 'S')
+        if (key == 'z' || key == 'Z')
         {
             delete_map_object(mid_sim_w, &spot.base);
             spot.base.position.y -= 1;
